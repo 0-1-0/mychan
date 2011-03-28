@@ -1,0 +1,19 @@
+%br
+%h1=@section.name
+%br
+%hr
+%br
+- @stream.posts.each do |post|
+	%div{:class => 'post-wrapper'}=render post
+%hr
+%br	
+-	form_for(@post, :html => {:multipart => true}) do |f|
+	=f.hidden_field :stream_id, :value => @stream.id
+	%div=f.text_area :message, :rows => 8, :cols => 90
+	%br
+	%div
+		=f.label :photo, 'Картинка'
+		=f.file_field :photo
+		=f.submit('Ответ')
+
+%br

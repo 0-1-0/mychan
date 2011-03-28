@@ -1,0 +1,12 @@
+%br
+%br
+%table
+	%tr
+		%td{:class => 'post-image'}
+			- if post.photo.exists? then
+				%a{:href	=> "#{post.photo.url(:large)}", :class=>"thickbox"}
+					=image_tag post.photo.url(:medium)
+		%td{:class => 'post-text'}
+			№ #{post.id} 
+			%br
+			=post.message

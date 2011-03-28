@@ -1,0 +1,63 @@
+.header{
+	margin: 20px 20px 20px 0px;
+}
+
+.wrapper{
+	background: #f1f2f1;
+}
+
+.left-column{
+	float:left;
+	line-height: 23px;
+	padding: 0px 20px 20px 20px;
+	font: 150% "Lucida Grande", "Trebuchet MS", sans-serif;
+	height: 100%;
+	position: fixed;
+	width: 11em;
+	color: #ffffff; 
+}
+
+.left-column ul{
+	list-style-type: none;
+}
+
+.right-column{
+	margin-top: 0px;
+	margin-left: 160px;
+	
+}
+
+.post-wrapper{
+	background: #d4d4d4;
+	border: 1px solid #a4a4a4;
+	padding: 3px 3px 3px 3px;
+	margin: 7px 7px 7px 7px;
+	border-radius: 5px;
+}
+
+.post-text{
+	vertical-align: top;
+	padding-left: 10px;
+	valign: top;
+}
+
+.post-image{
+	padding-left: 10px;
+}
+
+.reply-link{
+	float:right;
+	margin: -30px 50px 10px 10px;
+}
+
+.missed{
+	float:right;
+	padding-right: 160px;
+	margin-top: -30px;
+}
+
+.post-id-link{
+	float:right;
+	vertical-align:top;
+	margin-right:50px;
+}
