@@ -11,10 +11,11 @@
 			=fp.file_field :photo
 			=f.submit('Создать тред')
 		%br
+		=fp.label :message, 'Используйте конструкцию >>n для ответа на пост №n' 
 		%div=fp.text_area :message, :rows => 8, :cols => 90
 		
 
--	@section.streams.joins("left join posts on streams.id = posts.stream_id").order("posts.created_at").group("posts.stream_id").reverse.each do |stream|
+-	@streams.each do |stream|
 	%hr	
 	=render stream.posts.first	
 	%div{:class=>'reply-link'}=link_to '[Ответ]', stream
@@ -23,6 +24,8 @@
 		%div{:class=>'missed'}="Пропущено #{stream.posts.count - 10}"	
 	-	stream.posts[1..-1].last(9).each do |post|
 		%div{:class => 'post-wrapper'}=render post
+		
+=will_paginate(@streams)
 		
 %br
 %br

@@ -102,27 +102,26 @@ function tb_show(caption, url, imageGroup) {//function called when the user clic
 				
 			// Resizing large images - orginal by Christian Montoya edited by me.
 			var pagesize = tb_getPageSize();
-			var x = pagesize[0] - 150;
-			var y = pagesize[1] - 150;
+			var x = pagesize[0];
+			var y = pagesize[1] - 40;
 			var imageWidth = imgPreloader.width;
 			var imageHeight = imgPreloader.height;
 			if (imageWidth > x) {
-				imageHeight = imageHeight * (x / imageWidth); 
-				imageWidth = x; 
-				if (imageHeight > y) { 
-					imageWidth = imageWidth * (y / imageHeight); 
-					imageHeight = y; 
-				}
-			} else if (imageHeight > y) { 
-				imageWidth = imageWidth * (y / imageHeight); 
-				imageHeight = y; 
-				if (imageWidth > x) { 
-					imageHeight = imageHeight * (x / imageWidth); 
-					imageWidth = x;
-				}
-			}
-			// End Resizing
-			
+			        imageHeight = imageHeight * (x / imageWidth); 
+			        imageWidth = x; 
+			        if (imageHeight > y) { 
+			          imageWidth = imageWidth * (y / imageHeight); 
+			          imageHeight = y; 
+			        }
+			      } else if (imageHeight > y) { 
+			        imageWidth = imageWidth * (y / imageHeight); 
+			        imageHeight = y; 
+			        if (imageWidth > x) { 
+			          imageHeight = imageHeight * (x / imageWidth); 
+			          imageWidth = x;
+			        }
+			      }
+			      // End Resizing
 			TB_WIDTH = imageWidth + 30;
 			TB_HEIGHT = imageHeight + 60;
 			$("#TB_window").append("<a href='' id='TB_ImageOff' title='Close'><img id='TB_Image' src='"+url+"' width='"+imageWidth+"' height='"+imageHeight+"' alt='"+caption+"'/></a>" + "<div id='TB_caption'>"+caption+"<div id='TB_secondLine'>" + TB_imageCount + TB_PrevHTML + TB_NextHTML + "</div></div><div id='TB_closeWindow'><a href='#' id='TB_closeWindowButton' title='Close'>close</a> or Esc Key</div>"); 		
