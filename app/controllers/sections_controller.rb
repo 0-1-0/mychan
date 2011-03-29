@@ -15,7 +15,12 @@ class SectionsController < ApplicationController
     @section  = Section.find(params[:id])
     @stream   = Stream.new
     @post     = Post.new
-    @streams  = @section.streams.joins("left join posts on streams.id = posts.stream_id").order("posts.created_at").group("posts.stream_id").reverse.paginate(:page => params[:page])
+    @streams  = @section.streams.
+                joins("left join posts on streams.id = posts.stream_id").
+                order("posts.created_at").
+                group("posts.stream_id").
+                reverse.
+                paginate :page => params[:page], :per_page => 10
 
     respond_to do |format|
       format.html # show.html.erb
