@@ -2,9 +2,8 @@
 <html>
 <head>
   <title>Mychan</title>
-  <%= stylesheet_link_tag :all %>
-	<%= javascript_include_tag 'jquery-latest.pack' %>
-	<%= javascript_include_tag 'thickbox' %>
+ 	<%= javascript_include_merged :base %>
+	<%= stylesheet_link_merged :base %>
   <%= csrf_meta_tag %>
 </head>
 <body>

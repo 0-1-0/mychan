@@ -32,6 +32,5 @@ gem 'sqlite3'
 
 gem 'haml', '3.0.25'
 gem 'rmagick'
-gem 'jquery-rails'
 gem "will_paginate", "~> 3.0.pre2"
 

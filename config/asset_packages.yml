@@ -1,0 +1,10 @@
+--- 
+javascripts: 
+- base: 
+  - thickbox
+  - jquery-latest.pack
+stylesheets: 
+- base: 
+  - main
+  - scaffold
+  - thickbox
